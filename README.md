@@ -11,10 +11,9 @@
 
  2. Create a folder called `themes` inside it, if it doesn't already exist
 
- 3. Clone this repository into the `themes` directory.
+ 3. Clone this repository and place `rectilinear` subfolder into the `themes` directory.
 
- 4. Omit the `utils` folder as it would take up precious space in your EFI partition 
-    and only serves to allow wider font generation than the rEFInd included `mkfont.sh` script
+ 4. The `utils` folder only serves to allow wider font generation than the rEFInd included `mkfont.sh` script
     (you are free to use it to update the font if desired)
  
  5. To enable the theme add `include themes/rectilinear/theme.conf` at the end of
