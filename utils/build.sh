@@ -9,9 +9,9 @@ HERE=$(dirname "$0")
 "$HERE/make_icons.sh"
 "$HERE/make_os_icons.sh"
 "$HERE/make_os_fallbacks.sh"
-"$HERE/make_font.sh" "$HERE/GeistMono-Medium.otf" 28 "$HERE/../rectilinear/fonts/geist-mono-28.png"
+"$HERE/make_font.sh" "$HERE/SpaceMono-Regular.ttf" 28 "$HERE/../rectilinear/fonts/space-mono-28.png"
 # 2x sheet for HiDPI screens: RefindPlus scales icons there but draws fonts as-is.
-"$HERE/make_font.sh" "$HERE/GeistMono-Medium.otf" 56 "$HERE/../rectilinear/fonts/geist-mono-56.png"
+"$HERE/make_font.sh" "$HERE/SpaceMono-Regular.ttf" 56 "$HERE/../rectilinear/fonts/space-mono-56.png"
 "$HERE/make_preview.sh"
 
 # Reproducible output: drop the timestamps ImageMagick writes into every PNG, so
