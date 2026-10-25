@@ -40,7 +40,7 @@ for i in "${!TOOLS[@]}"; do
 done
 
 # label: glyphs cut from the font sheet (alpha only), rEFInd draws them in white
-FONT="$THEME/fonts/geist-mono-28.png"
+FONT="$THEME/fonts/space-mono-28.png"
 CW=$(( $(identify -format %w "$FONT") / 96 )); CH=$(identify -format %h "$FONT")
 T=$(mktemp -d); trap 'rm -rf "$T"' EXIT
 magick "$FONT" -alpha extract "$T/alpha.png"
