@@ -11,9 +11,11 @@ THEME="$HERE/../rectilinear"
 OUT=${1:-"$HERE/../preview.png"}
 ICONS="$THEME/icons"
 
-BIG=128 BIG_SEL=144 BIG_PITCH=151 BIG_Y=540
-SMALL=48 SMALL_SEL=64 SMALL_PITCH=72 SMALL_Y=660
-LABEL_Y=722
+# Vertical layout is relative to the middle of the background, as rEFInd centres it.
+MID=$(( $(identify -format %h "$THEME/background.png") / 2 ))
+BIG=128 BIG_SEL=144 BIG_PITCH=151 BIG_Y=$MID
+SMALL=48 SMALL_SEL=64 SMALL_PITCH=72 SMALL_Y=$((MID + 120))
+LABEL_Y=$((MID + 182))
 BADGE=32   # drive badge drawn on the lower-right corner of each OS tile
 OS=(os_win os_cachy os_linux os_arch os_ubuntu os_fedora os_debian)
 TOOLS=(func_bootorder func_about func_hidden func_reset func_exit func_firmware)
