@@ -11,8 +11,10 @@ THEME="$HERE/../rectilinear"
 OUT=${1:-"$HERE/../preview.png"}
 ICONS="$THEME/icons"
 
-# Vertical layout is relative to the middle of the background, as rEFInd centres it.
-MID=$(( $(identify -format %h "$THEME/background.png") / 2 ))
+# The mock-up is drawn on a 1920-wide canvas whatever the wallpaper's size;
+# vertical layout is relative to its middle, as rEFInd centres it.
+BW=$(identify -format %w "$THEME/background.png") BH=$(identify -format %h "$THEME/background.png")
+MID=$(( BH * 1920 / BW / 2 ))
 BIG=128 BIG_SEL=144 BIG_PITCH=151 BIG_Y=$MID
 SMALL=48 SMALL_SEL=64 SMALL_PITCH=72 SMALL_Y=$((MID + 120))
 LABEL_Y=$((MID + 182))
@@ -22,7 +24,7 @@ TOOLS=(func_bootorder func_about func_hidden func_reset func_exit func_firmware)
 SELECTED=2
 LABEL="Boot Linux from linux"
 
-args=("$THEME/background.png")
+args=("$THEME/background.png" -resize 1920x)
 
 place() { # FILE SIZE CENTER_X CENTER_Y
   args+=( \( "$1" -resize "${2}x${2}" \) -geometry "+$(($3-$2/2))+$(($4-$2/2))" -composite )

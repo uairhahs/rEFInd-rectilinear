@@ -28,7 +28,8 @@
 7.  HiDPI screens: fonts are drawn at their native pixel size, so on a large panel
     (for example RefindPlus at native resolution, which scales icons but not text)
     add `font themes/rectilinear/fonts/space-mono-56.png` after the `include` line.
-8.  The background can easily be replaced by any .png-file with an ideal resolution of 1920x1080.
+8.  The background can be replaced by any PNG; run `utils/build.sh` afterwards so the
+    colours follow it.
 
 Entries should be autodetected and shown with the proper icons.
 
