@@ -28,13 +28,8 @@
 7.  HiDPI screens: fonts are drawn at their native pixel size, so on a large panel
     (for example RefindPlus at native resolution, which scales icons but not text)
     add `font themes/rectilinear/fonts/space-mono-56.png` after the `include` line.
-8.  Match the background to your screen. With `banner_scale fillscreen`, an image that
-    doesn't match the screen resolution is resized at boot, which can leave artefacts.
-    `utils/make_background.sh WIDTHxHEIGHT` exports the wallpaper (`utils/wallpaper.jpg`)
-    at your screen's exact resolution, centre-cropped to its aspect ratio, as
-    `rectilinear/background.png`. Pass an output path as the second argument to export
-    for another machine, and a different image as the third to use your own wallpaper;
-    run `utils/build.sh` afterwards so the colours follow it.
+8.  The background can be replaced by any PNG; run `utils/build.sh` afterwards so the
+    colours follow it.
 
 Entries should be autodetected and shown with the proper icons.
 
