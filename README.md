@@ -35,6 +35,15 @@ Entries should be autodetected and shown with the proper icons.
 
 Manual entries can be done via `menuentry` option (see refind.conf for examples).
 
+Manual entries on the same volume all get the same corner badge, because
+rEFInd takes it from the volume, so a current and a fallback kernel look
+identical. `utils/make_badged.sh` draws a badge into a copy of an icon
+instead, for that entry's `icon` line:
+
+```sh
+utils/make_badged.sh os_arch tool_windows_rescue os_arch_previous
+```
+
 ### Attributions
 
 > This theme is based on the [rEFInd-glassy](https://github.com/Pr0cella/rEFInd-glassy) theme.
